@@ -6,10 +6,28 @@ spring:
 spring:
   profiles: dev
   application:
-    name: springcloud-config-dev
-  
+    name: provider01-dev
+
+server:
+  port:8201
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8002/eureka/,http://localhost:8003/eureka/,http://localhost:8004/eureka/
+ 
+
 ---
 spring:
   profiles: test
   application:
-    name: springcloud-config-test
+    name: provider01-test
+
+server:
+  port:8202
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8002/eureka/,http://localhost:8003/eureka/,http://localhost:8004/eureka/
