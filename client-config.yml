@@ -1,0 +1,38 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+  application:
+    name: provider01-dev
+
+server:
+  port:8201
+
+#eureka配置
+eureka:
+  client:
+    #单机：defaultZone: http://localhost:8002/eureka/
+    #集群：http://localhost:8002/eureka/,http://localhost:8003/eureka/,http://localhost:8004/eureka/
+    service-url:
+      defaultZone: http://localhost:8002/eureka/,http://localhost:8003/eureka/,http://localhost:8004/eureka/
+ 
+
+---
+spring:
+  profiles: test
+  application:
+    name: provider01-test
+
+server:
+  port:8202
+
+#eureka配置
+eureka:
+  client:
+    #单机：defaultZone: http://localhost:8002/eureka/
+    #集群：http://localhost:8002/eureka/,http://localhost:8003/eureka/,http://localhost:8004/eureka/
+    service-url:
+      defaultZone: http://localhost:8002/eureka/,http://localhost:8003/eureka/,http://localhost:8004/eureka/
