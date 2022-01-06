@@ -34,7 +34,7 @@ eureka:
   instance:
     instance-id: provider-hystrix   #修改默认描述信息
 
-    ---
+---
 server:
   port: 8001
 
